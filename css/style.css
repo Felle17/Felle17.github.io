@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: lcd;
+  src: url(../font/SUBWT___.ttf);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+
+}
+
+main {
+
+}
+
+main input{
+    width: 100%;
+    font-size: 3.5rem;
+    margin-bottom:10px;
+    background-color: black;
+    color: green;
+    text-align: right;
+    padding: 10px 4px 10px 4px;
+    font-family: lcd;
+    border: 1px solid yellow;
+    border-radius:4px;
+}
+
+main section#keyBoard {
+    /** Grid eller liknade */
+}
+
+@media (max-width: 767px) {
+    body {
+
+    }
+
+    main {
+
+    }
+
+    main input{
+
+    }
+}
+
+@media (max-width: 339px) {
+    main {
+
+    }
+
+}

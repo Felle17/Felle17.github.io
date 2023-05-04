@@ -20,6 +20,7 @@ function init() {
  */
 function buttonClick(e) {
     let btn = e.target.id; //id för den tangent som tryckte ner
+    }
 
 
     // kollar om siffertangent är nedtryckt
@@ -35,6 +36,7 @@ function buttonClick(e) {
  *  Lägger till siffra på display.
  */
 function addDigit(digit) {
+
 }
 
 /**

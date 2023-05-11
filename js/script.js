@@ -13,30 +13,34 @@ function init() {
     lcd = document.getElementById('lcd');
     let keyBoard = document.getElementById('keyBoard')
     keyBoard.onclick = buttonClick;
+
 }
+
+
+
 
 /**
  * Händelsehanterare för kalkylatorns tangentbord
  */
 function buttonClick(e) {
-    let btn = e.target.id; //id för den tangent som tryckte ner
-    }
-
+    let btn = e.target.id;  //id för den tangent som tryckte ner
 
     // kollar om siffertangent är nedtryckt
+    if (btn == )
     if (btn.substring(0, 1) === 'b') {
         let digit = btn.substring(1, 2); // plockar ut siffran från id:et
+        console.log("digit");
+        addDigit(digit);
 
     } else { // Inte en siffertangent, övriga tangenter.
-
+        lcd.value += btn.substring(1, 2);
     }
 }
-
 /**
  *  Lägger till siffra på display.
  */
 function addDigit(digit) {
-
+    lcd.value += digit;
 }
 
 /**

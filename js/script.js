@@ -24,16 +24,22 @@ function init() {
  */
 function buttonClick(e) {
     let btn = e.target.id;  //id för den tangent som tryckte ner
-
     // kollar om siffertangent är nedtryckt
-    if (btn == )
+    
     if (btn.substring(0, 1) === 'b') {
         let digit = btn.substring(1, 2); // plockar ut siffran från id:et
-        console.log("digit");
         addDigit(digit);
 
     } else { // Inte en siffertangent, övriga tangenter.
-        lcd.value += btn.substring(1, 2);
+        switch (btn) {
+            case "clear":
+                memClear();
+
+            case"add":
+                setOperator('+');
+            
+        }
+        
     }
 }
 /**
@@ -41,6 +47,7 @@ function buttonClick(e) {
  */
 function addDigit(digit) {
     lcd.value += digit;
+    memory += digit;
 }
 
 /**
@@ -55,6 +62,8 @@ function addComma() {
  * +, -, *, /
  */
 function setOperator(operator){
+    memory = parseFloat(lcd.value);
+    lcd.value = '';
 
 }
 

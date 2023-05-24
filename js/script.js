@@ -38,6 +38,22 @@ function buttonClick(e) {
             case"add":
                 setOperator('+');
             
+            case "sub":
+                setOperator('-');
+            
+            case "mul":
+                setOperator('x')
+            
+            case "div":
+                setOperator('/');
+
+            case "enter":
+                calculate();
+                break;
+            
+            default:
+                break;
+            
         }
         
     }
@@ -64,7 +80,7 @@ function addComma() {
 function setOperator(operator){
     memory = parseFloat(lcd.value);
     lcd.value = '';
-
+    arithmetic = operator;
 }
 
 /**

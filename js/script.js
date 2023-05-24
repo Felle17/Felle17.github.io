@@ -52,7 +52,7 @@ function buttonClick(e) {
                 break;
             
             default:
-                break;
+                break
             
         }
         
@@ -84,9 +84,26 @@ function setOperator(operator){
 }
 
 /**
- * Beräknar ovh visar resultatet på displayen.
+ * Beräknar och visar resultatet på displayen.
  */
 function calculate() {
+let current = parseFloat(lcd.value);
+let result;
+
+    switch(arithmetic){
+        case '+':
+            result = memory + current;
+        case '-':
+            result = memory - current;
+        case '*':
+            result = memory * current;
+        case '/':
+            result = memory / current;
+        default:
+            return;
+    }
+
+    lcd.value = result;
 
 }
 

@@ -8,6 +8,7 @@ let lcd = null; // displayen
 
 let memory = 0; // Lagrat/gamlat värdet från display
 let arithmetic = null; // Vilken beräkning som skall göras +,-, x eller /
+let current = 0;
 
 function init() {
     lcd = document.getElementById('lcd');
@@ -15,9 +16,6 @@ function init() {
     keyBoard.onclick = buttonClick;
 
 }
-
-
-
 
 /**
  * Händelsehanterare för kalkylatorns tangentbord
@@ -34,18 +32,22 @@ function buttonClick(e) {
         switch (btn) {
             case "clear":
                 memClear();
-
+                break;
             case"add":
                 setOperator('+');
+                break;
             
             case "sub":
                 setOperator('-');
+                break;
             
             case "mul":
                 setOperator('x')
+                break;
             
             case "div":
                 setOperator('/');
+                break;
 
             case "enter":
                 calculate();
@@ -63,13 +65,17 @@ function buttonClick(e) {
  */
 function addDigit(digit) {
     lcd.value += digit;
-    memory += digit;
+    current += parseFloat(digit);
 }
 
 /**
  * Lägger till decimaltecken
  */
 function addComma() {
+    if (!lcd.value.includes('.')) {
+        lcd.value += '.';
+        current =+ '.'
+      }    
 
 }
 
@@ -78,33 +84,47 @@ function addComma() {
  * +, -, *, /
  */
 function setOperator(operator){
-    memory = parseFloat(lcd.value);
+    memory = lcd.value;
     lcd.value = '';
+    lcd.value += operator;
     arithmetic = operator;
+    current = '';
+    console.log(arithmetic);
 }
 
 /**
  * Beräknar och visar resultatet på displayen.
  */
 function calculate() {
-let current = parseFloat(lcd.value);
 let result;
 
     switch(arithmetic){
         case '+':
-            result = memory + current;
+            result = parseFloat(memory) + current;
+            break;
+
         case '-':
-            result = memory - current;
-        case '*':
-            result = memory * current;
+            result = parseFloat(memory) - current;
+            break;
+
+        case 'x':
+            result = parseFloat(memory) * current;
+            break;
+
         case '/':
-            result = memory / current;
+            result = parseFloat(memory) / current;
+            break;
+
         default:
+            console.error('Ogiltlig opperator ' + arithmetic);
             return;
     }
+    if (isNaN(result)) {
+        console.error('Beräkning resulterade i NaN');
+        return;
+      }
 
-    lcd.value = result;
-
+      lcd.value = Math.round(result).toString();
 }
 
 /** Rensar display */

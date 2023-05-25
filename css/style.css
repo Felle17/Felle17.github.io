@@ -26,6 +26,21 @@ button {
     font-size: 3rem;
 }
 
+button:hover{
+    color: green;
+    font-weight: bolder;
+}
+
+button#add, #sub, #mul, #div, #clear, #comma, #enter{
+    color: aqua;
+}
+
+button#add:hover, #sub:hover, #mul:hover, #div:hover, #clear:hover, #comma:hover, #enter:hover{
+    color: green;
+    font-weight: bolder;
+}
+
+ 
 main input{
     width: 100%;
     font-size: 3.5rem;

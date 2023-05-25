@@ -77,7 +77,7 @@ function addDigit(digit) {
 function addComma() {
     if (!lcd.value.includes('.')) {
         lcd.value += '.';
-        current =+ '.'
+        current =+ '.';
       }    
 
 }
@@ -103,7 +103,7 @@ let result;
 
     switch(arithmetic){
         case '+':
-            result = parseFloat(memory) + current;
+            result = parseFloat(memory) + parseFloat(current);
             break;
 
         case '-':
@@ -127,7 +127,7 @@ let result;
         return;
       }
 
-      lcd.value = Math.round(result).toString();
+      lcd.value = result;
 }
 
 /** Rensar display */

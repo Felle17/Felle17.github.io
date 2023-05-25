@@ -39,7 +39,6 @@ button#add,
     font-weight: bolder;
 }
 
-
 main input {
     width: 100%;
     font-size: 4rem;
@@ -62,41 +61,30 @@ main section#keyBoard {
     .col-1 {
         grid-column: span 1;
     }
-
     .col-2 {
         grid-column: span 2;
     }
-
     .col-3 {
         grid-column: span 3;
     }
-
     .col-4 {
         grid-column: span 4;
     }
-
     .col-5 {
         grid-column: span 5;
     }
-
     .col-6 {
         grid-column: span 6;
     }
-
     .row-2 {
         grid-row: span 2;
     }
-
     .row-3 {
         grid-row: span 3;
     }
-
     .row-4 {
         grid-row: span 4;
     }
-
     .row-5 {
         grid-row: span 5;
     }
-
-

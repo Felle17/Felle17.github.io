@@ -55,7 +55,8 @@ function buttonClick(e) {
             
             case "comma":
                 addComma();
-            
+                break;
+
             default:
                 break
             
@@ -76,7 +77,7 @@ function addDigit(digit) {
 function addComma() {
     if (!lcd.value.includes('.')) {
         lcd.value += '.';
-        current =+ '.';
+        current += '.';
       }    
 
 }
@@ -102,7 +103,7 @@ let result;
 
     switch(arithmetic){
         case '+':
-            result = parseFloat(memory) + current;
+            result = parseFloat(memory) + parseFloat(current);
             break;
 
         case '-':
@@ -126,7 +127,7 @@ let result;
         return;
       }
 
-      lcd.value = result;
+      lcd.value = result.toFixed(3);
 }
 
 /** Rensar display */

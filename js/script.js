@@ -53,6 +53,9 @@ function buttonClick(e) {
                 calculate();
                 break;
             
+            case "comma":
+                addComma();
+            
             default:
                 break
             

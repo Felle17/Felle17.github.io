@@ -3,7 +3,6 @@
  * Det är helt fritt att ändra och ta bort kod om ni
  * önskar lösa problemen med andra metoder.
  */
-
 let lcd = null; // displayen
 
 let memory = 0; // Lagrat/gamlat värdet från display
@@ -14,7 +13,6 @@ function init() {
     lcd = document.getElementById('lcd');
     let keyBoard = document.getElementById('keyBoard')
     keyBoard.onclick = buttonClick;
-
 }
 
 /**
@@ -23,7 +21,7 @@ function init() {
 function buttonClick(e) {
     let btn = e.target.id;  //id för den tangent som tryckte ner
     // kollar om siffertangent är nedtryckt
-    
+
     if (btn.substring(0, 1) === 'b') {
         let digit = btn.substring(1, 2); // plockar ut siffran från id:et
         addDigit(digit);
@@ -33,18 +31,18 @@ function buttonClick(e) {
             case "clear":
                 memClear();
                 break;
-            case"add":
+            case "add":
                 setOperator('+');
                 break;
-            
+
             case "sub":
                 setOperator('-');
                 break;
-            
+
             case "mul":
                 setOperator('x')
                 break;
-            
+
             case "div":
                 setOperator('/');
                 break;
@@ -52,15 +50,14 @@ function buttonClick(e) {
             case "enter":
                 calculate();
                 break;
-            
+
             case "comma":
                 addComma();
                 break;
 
             default:
                 break
-            
-        }  
+        }
     }
 }
 /**
@@ -78,30 +75,28 @@ function addComma() {
     if (!lcd.value.includes('.')) {
         lcd.value += '.';
         current += '.';
-      }    
-
+    }
 }
 
 /**
  * Sparar operator.
  * +, -, *, /
  */
-function setOperator(operator){
+function setOperator(operator) {
     memory = lcd.value;
     lcd.value = '';
     lcd.value += operator;
     arithmetic = operator;
     current = '';
-    console.log(arithmetic);
 }
 
 /**
  * Beräknar och visar resultatet på displayen.
  */
 function calculate() {
-let result;
+    let result;
 
-    switch(arithmetic){
+    switch (arithmetic) {       //Kollar vilket räknesätt som ska användas
         case '+':
             result = parseFloat(memory) + parseFloat(current);
             break;
@@ -119,15 +114,10 @@ let result;
             break;
 
         default:
-            console.error('Ogiltlig opperator ' + arithmetic);
             return;
     }
-    if (isNaN(result)) {
-        console.error('Beräkning resulterade i NaN');
-        return;
-      }
 
-      lcd.value = result.toFixed(3);
+    lcd.value = result.toFixed(3);
 }
 
 /** Rensar display */
@@ -137,7 +127,7 @@ function clearLCD() {
 }
 
 /** Rensar allt, reset */
-function memClear(){
+function memClear() {
     memory = 0;
     arithmetic = null;
     clearLCD();

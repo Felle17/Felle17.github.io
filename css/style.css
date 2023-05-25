@@ -23,19 +23,16 @@ main {
 }
 
 button {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
-button:hover{
-    color: green;
-    font-weight: bolder;
-}
+
 
 button#add, #sub, #mul, #div, #clear, #comma, #enter{
     color: aqua;
 }
 
-button#add:hover, #sub:hover, #mul:hover, #div:hover, #clear:hover, #comma:hover, #enter:hover{
+#add:hover, #sub:hover, #mul:hover, #div:hover, #clear:hover, #comma:hover, #enter:hover{
     color: green;
     font-weight: bolder;
 }
@@ -43,7 +40,7 @@ button#add:hover, #sub:hover, #mul:hover, #div:hover, #clear:hover, #comma:hover
  
 main input{
     width: 100%;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom:10px;
     background-color: black;
     color: green;

@@ -59,8 +59,7 @@ function buttonClick(e) {
             default:
                 break
             
-        }
-        
+        }  
     }
 }
 /**
@@ -103,7 +102,7 @@ let result;
 
     switch(arithmetic){
         case '+':
-            result = parseFloat(memory) + parseFloat(current);
+            result = parseFloat(memory) + current;
             break;
 
         case '-':

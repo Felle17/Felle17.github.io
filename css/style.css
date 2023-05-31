@@ -34,9 +34,9 @@ button#add,
 #div:hover,
 #clear:hover,
 #comma:hover,
-#enter:hover,
-button:hover{
-    
+#enter:hover
+{
+
     color: green;
     font-weight: bolder;
 }
